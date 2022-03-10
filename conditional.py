@@ -5,7 +5,7 @@ def main():
 
     j2_env = Environment(
         loader=FileSystemLoader("/home/brad/network_automation_workshop/templates")
-    }
+    )
     template = j2_env.get_template("interfacev2.j2")
 
     interfaces = [
