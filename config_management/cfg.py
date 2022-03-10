@@ -17,12 +17,14 @@ def main():
 
     cfg_conn = ScrapliCfg(conn=conn)
 
-    print(type(cfg_conn), dir(cfg_conn))
+    #print(type(cfg_conn), dir(cfg_conn))
 
     cfg_conn.prepare()
 
     get_result = cfg_conn.get_config()
-    print(type(get_result), dir(get_result))
+    #print(type(get_result), dir(get_result))
+
+    print(get_result.result)
 
 
 if __name__ == "__main__":
