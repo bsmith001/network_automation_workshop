@@ -1,0 +1,4 @@
+ip access-list extended deny_bogons
+{% for acl_lines in acl_lines %}
+{{ acl_lines }}
+{% endfor %}
