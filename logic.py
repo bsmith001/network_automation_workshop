@@ -26,6 +26,18 @@ def main():
 
     print(template.render(acl_lines=acl_lines))
 
+    template_v2 = j2_env.get_template("aclv2.j2")
+
+    acl_lines_v2 = [
+        {"action": "deny", "protocol": "ip", "source": "0.0.0.0 0.255.255.255", "dest": "any"},
+        {"action": "deny", "protocol": "ip", "source": "10.0.0.0 0.255.255.255", "dest": "any"},
+        {"action": "deny", "protocol": "ip", "source": "100.64.0.0 0.0.63.255", "dest": "any"},
+        {"action": "deny", "protocol": "ip", "source": "127.0.0.0 0.255.255.255", "dest": "any"}
+    ]
+
+    print(template_v2.render(acl_lines=acl_lines_v2))
+
+
 
 
 if __name__ == "__main__":
