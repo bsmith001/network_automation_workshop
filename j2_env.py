@@ -1,4 +1,4 @@
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, Template
 
 
 def main():
@@ -15,6 +15,8 @@ def main():
 
     print(template.render(**template_agrs))
 
+    inline_template = Template("Hai fren, I'm {{ person }}, how you doin!?")
+    print(inline_template.render(person="tacocat"))
 
 if __name__ == "__main__":
     main()
